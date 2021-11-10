@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Modify a JavaScript Object</h2>
+<p id="demo"></p>
+
+<script>
+
+    //jsoN Object
+    const text = '{"name": "John", "age": 30, "city": "New York" }'
+    console.log(text);
+    // JSON OBJECT to JS Object
+    const obj = JSON.parse(text);
+    console.log(obj);
+    document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+    console.log(obj);
+
+    //PARSING a JSON array
+    const text2 = '["Ford", "BMW", "AUDI", "FIAT"]';
+    console.log(text2);
+
+    // JSON Array to JS Array
+    const myArr = JSON.parse(text2);
+    console.log(myArr);
+    document.getElementById("demo").innerHTML = myArr[0];
+    console.log(myArr);
+
+    //parsing a string into Date
+    //date as string
+
+    const text3 = '{"name": "JOHN", "birth": "1997-12-14", "city" : "New York"}';
+    const ob = JSON.parse(text3);
+    console.log(ob);
+
+    //convert it back into a date object later
+    ob.birth = new Date(ob.birth);
+    console.log(ob);
+    document.getElementById("demo").innerHTML = ob.name + ", " + ob.birth;
+
+    //convert a string into a function
+    const text4 = '{"name":"John" , "age":"function() {return 30;}", "city":"New York"}';
+    const obj5 = JSON.parse(text4);
+    obj5.age = eval("(" + obj5.age + ")");
+    console.log(obj5.age);
+
+    document.getElementById("demo").innerHTML = obj5.name + ", " + obj5.age();
+
+</script>
+
+</body>
+</html>

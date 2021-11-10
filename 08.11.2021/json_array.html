@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Modify a JavaScript Array</h2>
+<p id="demo"></p>
+
+<script>
+    //Access Array Values
+
+    const myJson = '{"name": "John", "age":30 , "cars": ["Ford", "BMW","Fiat"]}';
+    const myObj = JSON.parse(myJson);
+    document.getElementById("demo").innerHTML = myObj.cars[0];
+
+</script>
+
+</body>
+</html>

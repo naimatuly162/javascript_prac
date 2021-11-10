@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Error Handling</h2>
+
+<p>How to use <b>catch</b> to display an error.</p>
+
+<input type="button" value="View message" onclick="message()" />
+<p id="demo"></p>
+
+<script>
+    var txt = "";
+    function message() {
+        try{
+            zdfbhalert("Welcome guest!");
+        }
+        catch (err){
+            txt = "There was an error on this page.\n\n";
+            txt += "Click OK to continue,\n";
+            txt += "or cancel to return home. \n\n";
+
+            if(!confirm(txt)){
+                document.location.href = "https://www.geeksforgeeks.org/form-validation-using-html-javascript/";
+            }
+        }
+    }
+
+    try {
+       zdfbhalert("Welcome guest!");
+    }
+    catch(err) {
+        document.getElementById("demo").innerHTML = err.message;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript </h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+
+    //Looping Object Properties
+    const myJSON = '{"name": "John", "age":30, "car": null}';
+    const myObj = JSON.parse(myJSON);
+
+    let text = " ";
+    let text2 = " ";
+    for ( const x in myObj ) {
+
+        text += x + " ,";
+        //Looping Object Values
+        text2 += myObj[x] + ", ";
+
+    }
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById("demo2").innerHTML = text2;
+
+
+
+
+</script>
+
+</body>
+</html>

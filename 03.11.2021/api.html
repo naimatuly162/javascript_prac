@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Gelocation</h2>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+
+<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+<p id="demo2"></p>
+
+<script>
+    //pop message location
+    const x = document.getElementById("demo");
+    function getLocation() {
+        try {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } catch {
+            x.innerHTML = err;
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+    //formApi
+
+    function myFunction() {
+        const input = document.getElementById("id1");
+        if (!input.checkValidity()) {
+            document.getElementById("demo2").innerHTML = input.validationMessage;
+        } else {
+            document.getElementById("demo2").innerHTML = "Input OK";
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

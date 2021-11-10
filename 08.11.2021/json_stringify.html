@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    //JavaScript object to JSON string
+    const obj = {name: "John", age:30 , city:"New York"};
+    const myJSON = JSON.stringify(obj);
+    console.log(myJSON);
+    document.getElementById("demo").innerHTML = myJSON;
+
+    //js array to json string
+    const arr = ["John", "Peter", "Sally", "Jane"];
+    const myJSON2 = JSON.stringify(arr);
+    console.log(myJSON2);
+    document.getElementById("demo").innerHTML = myJSON2;
+
+    //Storing Data ()
+    const myObj = { name:"John", age:31, city:"New York" };
+    const myJSON3 = JSON.stringify(myObj);
+    localStorage.setItem("testJSON", myJSON3);
+    console.log(myJSON3);
+
+    //Retrieving Data
+    let text = localStorage.getItem("testJSON");
+    let obj2 = JSON.parse(text);
+    console.log(obj2);
+    document.getElementById("demo").innerHTML = obj2.name;
+
+    //stringify date
+    const objDate = {name: "John", today: new Date(), city: "New York"};
+    const myJSON4 = JSON.stringify(objDate);
+    document.getElementById("demo").innerHTML = myJSON4;
+
+</script>
+</body>
+</html>

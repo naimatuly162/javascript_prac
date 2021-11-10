@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Set HTML</h2>
+
+<div id="01"><p>Hello World</p></div>
+<div id="02"><p>Hello Sweden</p></div>
+<div id="03"><p>Hello Japan</p></div>
+
+<p id="demo"></p>
+
+<script>
+    //set html content
+    //jquery
+
+    $(document).ready(function () {
+        var content = $("#02").html();
+        $("#01").html(content);
+    });
+
+    //javascript
+    const myElement = document.getElementById("01");
+    myElement.textContent = "Hello Sweden!";
+
+    //get text content
+    //javascript
+    const myElement2 = document.getElementById("02").textContent;
+    document.getElementById("demo").innerHTML = myElement2;
+
+    //jquery
+    $(document).ready(function () {
+        var myText = $("#02").text();
+        $("#demo").text(myText);
+    })
+
+    //set HTML content
+    //javascript
+    const content = document.getElementById("02").innerHTML;
+    document.getElementById("01").innerHTML = content ;
+
+    //jquery
+    $(document).ready(function () {
+        var myText2 = $("#02").text();
+        $("#demo").text(myText2)
+    })
+
+</script>
+
+</body>
+</html>

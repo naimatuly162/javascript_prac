@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo" style="display:none">Hello JavaScript!</p>
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+
+<!--hide para-->
+<p id="demo2">JavaScript can hide HTML elements.</p>
+<button type="button" onclick="document.getElementById('demo2').style.display='none'">Click Me!</button>
+
+<!--display hidden para-->
+<p id="demo3" style="display:none">Hello JavaScript!</p>
+<button type="button" onclick="document.getElementById('demo3').style.display='block'">Click Me!</button>
+
+<!--changing a paragraph-->
+<p id="demo4">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+    function myFunction() {
+        document.getElementById("demo4").innerHTML = "Paragraph changed.";
+    }
+</script>
+
+</body>
+</html>

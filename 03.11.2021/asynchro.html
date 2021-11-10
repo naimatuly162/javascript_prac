@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2 >Wait for a sec.....</h2>
+<p id="demo"></p>
+<script>
+
+//timeOut()
+setTimeout(myFunction, 1000);
+
+function myFunction(){
+    document.getElementById("demo").innerHTML = "Loading....";
+}
+
+//passing whole functions as an argument
+
+setTimeout( function() { myFunction2 ("You are Welcome !!")} , 3000);
+
+function myFunction2(value){
+    document.getElementById("demo").innerHTML = value;
+}
+
+//setInterval()
+
+setInterval(myFunction3 , 4000);
+function myFunction3(){
+    let d = new Date();
+    document.getElementById("demo").innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+}
+
+//waiting for Files
+function myDisplayer4(value) {
+    document.getElementById("demo").innerHTML = value;
+}
+function getFile(myCallback) {
+    let req = new XMLHttpRequest() ;
+    req.open('GET', "callbacks.html" );
+    req.onload = function() {
+        if ( req.status == 200 ) {
+            myCallback( this.responseText );
+        } else {
+            myCallback( "error: " + req.status );
+        }
+    }
+    req.send();
+}
+getFile(myDisplayer4);
+
+
+</script>
+
+</body>
+</html>
