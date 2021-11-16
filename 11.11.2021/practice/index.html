@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>colors</title>
+</head>
+<body>
+<nav class="navbar" style="position: sticky ; top: 0; z-index: 999">
+    <div class="navbar_container">
+
+        <div class="navbar_toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="navbar_menu" style="list-style: none; display: flex; text-align: center; justify-content: space-around; font-size: 20px; ">
+            <li class="navbar-item">
+                <a style="text-decoration: none" href="#home" class="navbar_links" id="home-page">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a style="text-decoration: none" href="#about" class="navbar_links" id="about-page">About</a>
+            </li>
+            <li class="navbar-item">
+                <a style="text-decoration: none" href="#services" class="navbar_links" id="services-page">Services</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="home_page" id="home">
+    <h1>Home</h1>
+    <table style="height: 840px; width: 560px">
+        <tr>
+            <td style="background-color: #00dbde"></td>
+            <td style="background-color: #9f30a3"></td>
+            <td style="background-color: #81db27"></td>
+            <td style="background-color: #81db27"></td>
+            <td style="background-color: #81db27"></td>
+            <td style="background-color: #81db27"></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="main" id="about">
+    <h1>About</h1>
+    <div class="main container">
+        <table style="height: 840px; width: 560px">
+            <tr>
+                <td style="background-color: #c43319"></td>
+                <td style="background-color: #0d8ce0"></td>
+                <td style="background-color: #de4ec6"></td>
+                <td style="background-color: #65405f"></td>
+                <td style="background-color: #870d73"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="services" id="services">
+    <h1>Services</h1>
+    <table style="height: 840px; width: 760px">
+        <tr>
+            <td style="background-color: #a87e11"></td>
+            <td style="background-color: #0d8ce0"></td>
+            <td style="background-color: #4fe80c"></td>
+            <td style="background-color: #4fe80c"></td>
+            <td style="background-color: #4fe80c"></td>
+            <td style="background-color: #4fe80c"></td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+
+    const menu = document.querySelector('#mobile-menu')
+    const navLinks = document.querySelector('.navbar_menu')
+
+    const mobileMenu = () => {
+        menu.classList.toggle('is-active');
+        navLinks.classList.toggle('active');
+    };
+    menu.addEventListener('click', mobileMenu);
+
+    const highlightMenu = () => {
+        const elem = document.querySelector('.highlight');
+        const home= document.querySelector('#home-page');
+        const about = document.querySelector('#about-page');
+        const services = document.querySelector('#services-page');
+        let scroll = window.scrollY;
+
+        if(scroll < 600){
+            home.classList.add('highlight');
+            about.classList.remove('highlight');
+            return;
+        } else if(scroll< 1400){
+            home.classList.remove('highlight');
+            about.classList.add('highlight');
+            services.classList.remove('highlight');
+            return;
+        } else if(scroll< 2345){
+            about.classList.remove('highlight');
+            services.classList.add('highlight');
+            return;
+        }
+    }
+    window.addEventListener('scroll', highlightMenu);
+    window.addEventListener('click', highlightMenu);
+
+
+</script>
+
+</body>
+<style>
+*{
+    scroll-behavior: smooth;
+}
+    .highlight {
+        border-bottom: 4px solid rgb(132, 0, 255);
+    }
+
+
+</style>
+
+</html>

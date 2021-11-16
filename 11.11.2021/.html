@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Error Handling</h2>
+
+<p>How to use <b>catch</b> to display an error.</p>
+
+<input type="button" value="View message" onclick="message()" />
+<p id="demo"></p>
+
+<script>
+    function message() {
+        var w = window.open();
+        w.document.open();
+        w.document.write("<h1>Hello World !</h1>");
+        w.document.close();
+    }
+</script>
+
+</body>
+</html>

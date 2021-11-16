@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Mouse Over the Square</p>
+<table style="height: 240px; width:240px">
+    <tr>
+        <td onmouseover="bgChange(this.style.backgroundColor)"
+            onmouseout="bgChange('black')"
+            style="background-color: green">
+        </td>
+        <td onmouseover="bgChange(this.style.backgroundColor)"
+            onmouseout="bgChange('black')"
+            style="background-color: yellow">
+        </td>
+        <td onmouseover="bgChange(this.style.backgroundColor)"
+            onmouseout="bgChange('black')"
+            style="background-color: dodgerblue">
+        </td>
+    </tr>
+</table>
+<script>
+    function bgChange(bg) {
+        document.body.style.background = bg;
+    }
+</script>
+
+</body>
+</html>

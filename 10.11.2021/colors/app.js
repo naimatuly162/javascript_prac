@@ -1,3 +1,4 @@
+
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector('.navbar_menu');
 const navLogo = document.querySelector('#navbar__logo');
@@ -8,6 +9,7 @@ const mobileMenu = () => {
     menu.classList.toggle('is-active')
     menuLinks.classList.toggle('active')
 };
+
 menu.addEventListener('click', mobileMenu);
 
 // Show active menu when scrolling
@@ -42,6 +44,7 @@ window.addEventListener('scroll' , highlightMenu );
 window.addEventListener('click', highlightMenu );
 
 //  Close mobile Menu when clicking on a menu item
+
 const hideMobileMenu = () => {
     const menuBars = document.querySelector('.is-active');
     if ( window.innerWidth <= 768 && menuBars ) {
